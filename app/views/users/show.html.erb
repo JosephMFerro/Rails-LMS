@@ -1,0 +1,15 @@
+<h1><%= @user.full_name %></h1>
+<hr />
+<h2>courses</h2>
+<h3><%= @user.courses.length <= 0 ? "no courses" : nil %></h3>
+<ul>
+  <% @user.courses.each do |course| %>
+    <li> 
+      <%= link_to course.name, course %>
+    </li>
+    <% end %>
+</ul>
+<br />
+<br />
+<br />
+<%= link_to "delete user", @user, method: :delete, class: "ui red button inverted" %>

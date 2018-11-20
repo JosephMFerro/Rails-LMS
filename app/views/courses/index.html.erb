@@ -1,0 +1,11 @@
+<h1>courses</h1>
+<%= link_to "add course", new_course_path %>
+<hr />
+<h1><%= @courses.length <= 0 ? "no courses" : nil %></h1>
+<ul>
+  <% @courses.each do |course| %>
+    <li>
+      <%= link_to course.name, course %>
+    </li>
+  <% end %>
+</ul>
